@@ -62,8 +62,9 @@ pipeline {
           script {
             log = getLogJob(env.JOB_NAME, env.BUILD_NUMBER)
             
-            sh "touch logs.txt"
-            println log
+            File file = new File("logs.txt")
+            file << log
+            
             
               
              
