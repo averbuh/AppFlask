@@ -1,4 +1,4 @@
-@Library('GroovyLib') _
+@Library('dateutils') _
 
 pipeline {
     agent any
@@ -34,12 +34,7 @@ pipeline {
       }
     }
 
-    stage('Clean Workspace') {
-        steps {
-            cleanWs notFailBuild: true, patterns: [[pattern: '', type: 'INCLUDE']]
-        }
-    }
-   
+      
     // Uploading Docker images into AWS ECR
     stage('Pushing to ECR') {
      steps{  
@@ -54,4 +49,12 @@ pipeline {
         }
       }
     }
+
+    
+    stage('Clean Workspace') {
+       steps {
+           cleanWs notFailBuild: true, patterns: [[pattern: '', type: 'INCLUDE']]
+       }
+    }
+
 }
