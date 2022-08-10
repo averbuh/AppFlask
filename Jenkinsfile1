@@ -60,7 +60,7 @@ pipeline {
        steps {
            cleanWs notFailBuild: true, patterns: [[pattern: '', type: 'INCLUDE']]
            script {
-               log = getLogJob(100, ${JOB_NAME}, ${BUILD_NUMBER})
+               
                
            }
        }
