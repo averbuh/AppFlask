@@ -55,15 +55,14 @@ pipeline {
          
       }
     }
-    
 
-    
     stage('Clean Workspace') {
        steps {
            cleanWs notFailBuild: true, patterns: [[pattern: '', type: 'INCLUDE']]
-           log = getLogJob(100)
-           sh "${log} > logs.txt"
-
+           script {
+               log = getLogJob(100)
+               sh "${log} > logs.txt"
+           }
        }
     }
   }
