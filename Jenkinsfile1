@@ -4,7 +4,7 @@ pipeline {
     agent any
     parameters {
         choice(name: 'IMAGE_TAG', choices: ['1.1.0', '3.2.4', 'latest'], description: 'iMAGE VERSION')
-        dateform(name: 'format', choices: ['dd_MM_yy'], description: 'date format')
+        choice(name: 'format', choices: ['dd_MM_yy'], description: 'date format')
     }    
     environment {
         AWS_ACCOUNT_ID="297797860062"
