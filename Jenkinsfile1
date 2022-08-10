@@ -61,7 +61,9 @@ pipeline {
         cleanWs notFailBuild: true, patterns: [[pattern: '', type: 'INCLUDE']]
           script {
             log = getLogJob(100, env.JOB_NAME, env.BUILD_NUMBER)
-            sh "${println log} > logs.txt"
+            logstext = println log
+            sh "touch logs.txt"
+            sh "$logstext > logs.txt"
               
              
           }
