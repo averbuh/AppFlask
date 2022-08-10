@@ -59,10 +59,10 @@ pipeline {
     stage('Clean Workspace') {
        steps {
            cleanWs notFailBuild: true, patterns: [[pattern: '', type: 'INCLUDE']]
-           script {
+         
                
                
-           }
+           
        }
     }
   }
