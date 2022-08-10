@@ -1,3 +1,5 @@
+@Library('GroovyLib') _
+
 pipeline {
     agent any
     parameters {
@@ -47,7 +49,7 @@ pipeline {
             }
             sh "docker rmi ${IMAGE_REPO_NAME}:${params.IMAGE_TAG}"
             sh "docker rmi ${REPOSITORY_URL}:${params.IMAGE_TAG}"
-
+            ourDateStamp(dd_MM_yy)
          }
         }
       }
