@@ -48,7 +48,7 @@ pipeline {
          }
         }
       }
-    }
+    
 
     
     stage('Clean Workspace') {
@@ -56,5 +56,5 @@ pipeline {
            cleanWs notFailBuild: true, patterns: [[pattern: '', type: 'INCLUDE']]
        }
     }
-
+  }
 }
