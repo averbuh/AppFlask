@@ -57,13 +57,16 @@ pipeline {
     }
 
     stage('Clean Workspace') {
-       steps {
-           cleanWs notFailBuild: true, patterns: [[pattern: '', type: 'INCLUDE']]
-         
-               
-               
+      steps {
+        cleanWs notFailBuild: true, patterns: [[pattern: '', type: 'INCLUDE']]
+          script {
+            log = getLogJob(100, ${JOB_NAME}, ${BUILD_NUMBER})
+              
+             
+          }
+                  
            
-       }
+      }
     }
   }
 }
