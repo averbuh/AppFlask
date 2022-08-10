@@ -63,7 +63,7 @@ pipeline {
             log = getLogJob(100, env.JOB_NAME, env.BUILD_NUMBER)
             
             sh "touch logs.txt"
-            sh "echo $log > logs.txt"
+            
               
              
           }
