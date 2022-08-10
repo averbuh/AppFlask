@@ -44,8 +44,9 @@ pipeline {
             }
             sh "docker rmi ${IMAGE_REPO_NAME}:${params.IMAGE_TAG}"
             sh "docker rmi ${REPOSITORY_URL}:${params.IMAGE_TAG}"
+            println ourDateStamp("ddMMyy")
          }
-        ourDateStamp("dd_MM_yy")
+        
          
       }
     }
