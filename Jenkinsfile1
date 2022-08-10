@@ -46,8 +46,8 @@ pipeline {
             sh "docker rmi ${IMAGE_REPO_NAME}:${params.IMAGE_TAG}"
             sh "docker rmi ${REPOSITORY_URL}:${params.IMAGE_TAG}"
             sh "touch artifact.oto ."
-            DATE=ourDateStamp("${params.format}")
-            sh "mv artifact.oto artifact-${DATE}.oto"
+           
+            sh "mv artifact.oto artifact-${ourDateStamp("${params.format}")}.oto"
 
          }
         
